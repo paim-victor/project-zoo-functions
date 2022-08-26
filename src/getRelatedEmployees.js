@@ -13,7 +13,7 @@ function getRelatedEmployees(managerId) {
   return employees
     .filter((empregados) => empregados.managers
       .includes(managerId))
-    .map((empregados) => `${empregados.firstName} ${empregados.lastName}`); 
+    .map((empregados) => `${empregados.firstName} ${empregados.lastName}`);
 }
 
 module.exports = { isManager, getRelatedEmployees };
