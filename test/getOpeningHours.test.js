@@ -30,7 +30,17 @@ describe('Testes da função getOpeningHours', () => {
   test('Teste caso quarta-feira às 9hrs pm seja usado como parametro, retorna que o zoologico está fechado', () => {
     expect(getOpeningHours('Wednesday', '9:00-PM')).toEqual(fechado);
   });
-  test('Teste caso o formato do horário esta incorreto', () => {
+  test('Teste caso o formato numero do horário esteja incorreto', () => {
     expect(getOpeningHours('Sunday', 'X9:00-PM')).toThrowError(new Error('The hour should represent a number'));
   });
+  test('Teste caso o formato do horário não seja 12h', () => {
+    expect(getOpeningHours('Monday', '13:00-PM')).toThrowError(new Error('The hour must be between 0 and 12'));
+  });
+  test('Teste caso o formato do horário esteja incorreto', () => {
+    expect(getOpeningHours('Saturday', '13:00-PX')).toThrowError(new Error('The abbreviation must be \'AM\' or \'PM\''));
+  });
+  test('Teste caso o formato dos minutos do horário esteja incorreto', () => {
+    expect(getOpeningHours('Saturday', '13:X0-AM')).toThrowError(new Error('The minutes should represent a number'));
+  });
+  
 });
