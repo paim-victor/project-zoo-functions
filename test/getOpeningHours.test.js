@@ -42,5 +42,4 @@ describe('Testes da função getOpeningHours', () => {
   test('Teste caso o formato dos minutos do horário esteja incorreto', () => {
     expect(getOpeningHours('Saturday', '13:X0-AM')).toThrowError(new Error('The minutes should represent a number'));
   });
-  
 });
