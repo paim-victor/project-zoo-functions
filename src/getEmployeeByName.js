@@ -1,8 +1,8 @@
 const data = require('../data/zoo_data');
 
-function getEmployeeByName(employeeName) {
+function getEmployeeByName(nome) {
   const funcionario = data.employees
-    .filter((a) => a.firstName === employeeName || a.lastName === employeeName)[0];
+    .filter((a) => a.firstName === nome || a.lastName === nome)[0];
   if (funcionario === undefined) return {}; return funcionario;
 }
 
