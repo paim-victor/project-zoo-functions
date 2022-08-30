@@ -26,6 +26,6 @@ describe('Testes da função HandlerElephants', () => {
     expect(handlerElephants('Paim')).toBeNull();
   });
   test('Caso o argumento seja diferente de uma string, deve retornar a string `Parâmetro inválido, é necessário uma string` ', () => {
-    expect(handlerElephants(10)).toHaveReturned('Parâmetro inválido, é necessário uma string')
-  })
+    expect(handlerElephants(10)).toHaveReturned('Parâmetro inválido, é necessário uma string');
+  });
 });
