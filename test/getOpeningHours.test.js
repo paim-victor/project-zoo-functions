@@ -42,4 +42,10 @@ describe('Testes da função getOpeningHours', () => {
   test('Teste caso o formato dos minutos do horário esteja incorreto', () => {
     expect(getOpeningHours('Saturday', '13:X0-AM')).toThrowError(new Error('The minutes should represent a number'));
   });
+  test('Teste caso os minutos esteja fora de 0 a 59', () => {
+    expect(getOpeningHours('Saturday', '09:60-AM')).toThrowError(new Error('he minutes must be between 0 and 59'));
+  });
+  test('Teste caso os minutos esteja fora de 0 a 59', () => {
+    expect(getOpeningHours('THU', '09:00-AM')).toThrowError(new Error('The day must be valid. Example: Monday'));
+  });
 });
